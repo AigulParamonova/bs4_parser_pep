@@ -1,8 +1,10 @@
+atomicwrites==1.4.0
 attrs==21.4.0
 beautifulsoup4==4.9.3
 certifi==2021.10.8
 chardet==4.0.0
 charset-normalizer==2.0.12
+colorama==0.4.4
 flake8==4.0.1
 idna==2.10
 importlib-metadata==4.2.0
