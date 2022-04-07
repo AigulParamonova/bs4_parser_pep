@@ -1,4 +1,3 @@
-# Импортируйте модуль для работы с логами.
 import csv
 import datetime as dt
 import logging

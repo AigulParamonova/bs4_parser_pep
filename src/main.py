@@ -125,17 +125,17 @@ def pep(session):
         status_tag = dt_tag.find_next_sibling('dd').string
         first_column_tag = find_tag(tr_tag, 'td')
         preview_status = first_column_tag.text[1:]
-        if status_tag not in EXPECTED_STATUS[preview_status]:
-            logging.info(
-                f'Несовпадающие статусы:\n {pep_link}\n'
-                f'Cтатус в карточке: {status_tag}\n'
-                f'Ожидаемые статусы: {EXPECTED_STATUS[preview_status]}'
-            )
-
-        if status_tag not in buff:
-            buff[status_tag] = 1
+        if len(preview_status) <= 2:
+            if status_tag not in EXPECTED_STATUS[preview_status]:
+                logging.info(
+                    f'Несовпадающие статусы:\n {pep_link}\n'
+                    f'Cтатус в карточке: {status_tag}\n'
+                    f'Ожидаемые статусы: {EXPECTED_STATUS[preview_status]}'
+                )
         else:
-            buff[status_tag] += 1
+            raise KeyError('Получен неожиданный статус в таблице.')
+
+        buff[status_tag] = buff.get(status_tag, 0) + 1
 
     for key, value in buff.items():
         results.append((key, value))
