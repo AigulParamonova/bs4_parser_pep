@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup  # type: ignore
 from tqdm import tqdm  # type: ignore
 
 from configs import configure_argument_parser, configure_logging
-from constants import BASE_DIR, EXPECTED_STATUS, MAIN_DOC_URL, MAIN_PEP_URL
+from constants import BASE_DIR, EXPECTED_STATUS, MAIN_DOC_URL, MAIN_PEP_URL 
 from outputs import control_output  # type: ignore
 from utils import find_tag, get_response  # type: ignore
 
